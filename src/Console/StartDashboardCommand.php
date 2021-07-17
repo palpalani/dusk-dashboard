@@ -8,10 +8,10 @@ use BeyondCode\DuskDashboard\Ratchet\Http\EventController;
 use BeyondCode\DuskDashboard\Ratchet\Server\App;
 use BeyondCode\DuskDashboard\Ratchet\Socket;
 use BeyondCode\DuskDashboard\Watcher;
-use Clue\React\Buzz\Browser;
+use React\Http\Browser;
 use Illuminate\Console\Command;
 use Ratchet\WebSocket\WsServer;
-use React\EventLoop\Factory as LoopFactory;
+use React\EventLoop\Loop as LoopFactory;
 use React\EventLoop\LoopInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Routing\Route;
@@ -46,7 +46,7 @@ class StartDashboardCommand extends Command
     {
         $url = parse_url(config('dusk-dashboard.host', config('app.url')));
 
-        $this->loop = LoopFactory::create();
+        $this->loop = LoopFactory::get();
 
         $this->loop->futureTick(function () use ($url) {
             $dashboardUrl = 'http://'.$url['host'].':'.self::PORT.'/dashboard';
