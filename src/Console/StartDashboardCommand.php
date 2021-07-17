@@ -136,5 +136,9 @@ class StartDashboardCommand extends Command
         if (PHP_OS === 'Darwin') {
             exec('open '.$url);
         }
+
+        if(PHP_OS === 'Linux') {
+            exec('xdg-open '.$url);
+        }
     }
 }
