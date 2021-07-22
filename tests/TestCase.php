@@ -2,8 +2,8 @@
 
 namespace BeyondCode\DuskDashboard\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use BeyondCode\DuskDashboard\DuskDashboardServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

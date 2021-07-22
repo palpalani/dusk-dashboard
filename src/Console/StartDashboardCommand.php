@@ -8,17 +8,17 @@ use BeyondCode\DuskDashboard\Ratchet\Http\EventController;
 use BeyondCode\DuskDashboard\Ratchet\Server\App;
 use BeyondCode\DuskDashboard\Ratchet\Socket;
 use BeyondCode\DuskDashboard\Watcher;
-use React\Http\Browser;
 use Illuminate\Console\Command;
 use Ratchet\WebSocket\WsServer;
 use React\EventLoop\Loop as LoopFactory;
 use React\EventLoop\LoopInterface;
+use React\Http\Browser;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Routing\Route;
 
 class StartDashboardCommand extends Command
 {
-    const PORT = 9773;
+    public const PORT = 9773;
 
     protected $signature = 'dusk:dashboard';
 
@@ -78,7 +78,7 @@ class StartDashboardCommand extends Command
 
     protected function createTestWatcher()
     {
-        $finder = (new Finder)
+        $finder = (new Finder())
             ->name('*.php')
             ->files()
             ->in($this->getTestSuitePath());
@@ -86,9 +86,12 @@ class StartDashboardCommand extends Command
         (new Watcher($finder, $this->loop))->startWatching(function () {
             $client = new Browser($this->loop);
 
-            $client->post('http://127.0.0.1:'.self::PORT.'/events', [
+            $client->post(
+                'http://127.0.0.1:'.self::PORT.'/events',
+                [
                 'Content-Type' => 'application/json',
-            ], json_encode([
+            ],
+                json_encode([
                 'channel' => 'dusk-dashboard',
                 'name' => 'dusk-reset',
                 'data' => [],
@@ -137,7 +140,7 @@ class StartDashboardCommand extends Command
             exec('open '.$url);
         }
 
-        if(PHP_OS === 'Linux') {
+        if (PHP_OS === 'Linux') {
             exec('xdg-open '.$url);
         }
     }

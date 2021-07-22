@@ -19,9 +19,9 @@ class App extends \Ratchet\App
 
         $socket = new Reactor($address.':'.$port, $loop);
 
-        $this->routes = new RouteCollection;
+        $this->routes = new RouteCollection();
 
-        $urlMatcher = new UrlMatcher($this->routes, new RequestContext);
+        $urlMatcher = new UrlMatcher($this->routes, new RequestContext());
 
         $router = new Router($urlMatcher);
 

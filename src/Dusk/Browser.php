@@ -6,14 +6,14 @@ use BeyondCode\DuskDashboard\BrowserActionCollector;
 
 class Browser extends \Laravel\Dusk\Browser
 {
-    use Concerns\InteractsWithAuthentication,
-        Concerns\InteractsWithCookies,
-        Concerns\InteractsWithElements,
-        Concerns\InteractsWithJavascript,
-        Concerns\InteractsWithMouse,
-        Concerns\MakesAssertions,
-        Concerns\MakesUrlAssertions,
-        Concerns\WaitsForElements;
+    use Concerns\InteractsWithAuthentication;
+    use Concerns\InteractsWithCookies;
+    use Concerns\InteractsWithElements;
+    use Concerns\InteractsWithJavascript;
+    use Concerns\InteractsWithMouse;
+    use Concerns\MakesAssertions;
+    use Concerns\MakesUrlAssertions;
+    use Concerns\WaitsForElements;
 
     /** @var BrowserActionCollector */
     protected $actionCollector;
