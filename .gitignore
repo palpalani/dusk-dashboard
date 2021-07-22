@@ -1,5 +1,11 @@
+.idea
 build
 composer.lock
 docs
 vendor
 coverage
+.php-cs-fixer.cache
+.phpunit.result.cache
+phpunit.xml
+psalm.xml
+testbench.yaml
