@@ -3,7 +3,9 @@
 namespace BeyondCode\DuskDashboard\Ratchet\Http;
 
 use GuzzleHttp\Psr7\Response;
+
 use function GuzzleHttp\Psr7\str;
+
 use Psr\Http\Message\RequestInterface;
 use Ratchet\ConnectionInterface;
 
