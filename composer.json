@@ -16,11 +16,11 @@
         }
     ],
     "require": {
-        "php": "^7.2|^8.0",
+        "php": "^8.2",
         "cboden/ratchet": "^0.4.1",
         "guzzlehttp/guzzle": "^7.0.1",
-        "illuminate/console": "5.6.*|5.7.*|5.8.*|6.*|7.*|8.*|9.*",
-        "illuminate/support": "5.6.*|5.7.*|5.8.*|6.*|7.*|8.*|9.*",
+        "illuminate/console": "10.*|11.*",
+        "illuminate/support": "10.*|11.*",
         "laravel/dusk": "^4.0|^5.0|^6.0",
         "react/http": "^1.4",
         "yosymfony/resource-watcher": "^3.0"
@@ -28,7 +28,7 @@
     "require-dev": {
         "brianium/paratest": "^7.5",
         "larapack/dd": "^1.0",
-        "orchestra/testbench": "^6.15|^7.0",
+        "orchestra/testbench": "^8.0|^9.0",
         "phpunit/phpunit": "^11.2.6",
         "vimeo/psalm": "^5.25"
     },
